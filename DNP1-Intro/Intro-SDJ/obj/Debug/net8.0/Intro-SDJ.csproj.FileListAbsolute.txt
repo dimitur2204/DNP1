@@ -1,0 +1,15 @@
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/bin/Debug/net8.0/Intro-SDJ
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/bin/Debug/net8.0/Intro-SDJ.deps.json
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/bin/Debug/net8.0/Intro-SDJ.runtimeconfig.json
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/bin/Debug/net8.0/Intro-SDJ.dll
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/bin/Debug/net8.0/Intro-SDJ.pdb
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/obj/Debug/net8.0/Intro-SDJ.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/obj/Debug/net8.0/Intro-SDJ.AssemblyInfoInputs.cache
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/obj/Debug/net8.0/Intro-SDJ.AssemblyInfo.cs
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/obj/Debug/net8.0/Intro-SDJ.csproj.CoreCompileInputs.cache
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/obj/Debug/net8.0/Intro-SDJ.sourcelink.json
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/obj/Debug/net8.0/Intro-SDJ.dll
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/obj/Debug/net8.0/refint/Intro-SDJ.dll
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/obj/Debug/net8.0/Intro-SDJ.pdb
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/obj/Debug/net8.0/Intro-SDJ.genruntimeconfig.cache
+/Users/dimitar.nizamov/dev/via/DNP1/DNP1-Intro/Intro-SDJ/obj/Debug/net8.0/ref/Intro-SDJ.dll
