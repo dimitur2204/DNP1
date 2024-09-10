@@ -35,7 +35,7 @@ public class PostInMemoryRepository : IPostRepository
         return Task.CompletedTask;
     }
 
-    public Task GetSingleAsync(int id)
+    public Task<Post> GetSingleAsync(int id)
     {
         Post? foundPost = _posts.SingleOrDefault(p => p.Id == id);
         if (foundPost == null) throw new Exception("Post does not exist");
