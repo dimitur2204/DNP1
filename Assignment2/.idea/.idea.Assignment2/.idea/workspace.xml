@@ -8,9 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f251f5d2-7a3f-4495-a65f-329c4ec6afdb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Assignment1/.idea/.idea.Assignment1/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f251f5d2-7a3f-4495-a65f-329c4ec6afdb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +32,9 @@
     &quot;accountId&quot;: &quot;a00d97ae-b076-49aa-a24a-6cddcefb6017&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -55,7 +56,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -89,7 +90,7 @@
       <updated>1725899824676</updated>
       <workItem from="1725899825723" duration="3577000" />
       <workItem from="1725949343977" duration="11286000" />
-      <workItem from="1725988782654" duration="22000" />
+      <workItem from="1725988782654" duration="189000" />
     </task>
     <servers />
   </component>
@@ -99,6 +100,9 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>
