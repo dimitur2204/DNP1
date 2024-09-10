@@ -11,9 +11,9 @@ public class ViewOnePostView(IPostRepository postRepository, ICommentRepository 
         Post? post = null;
         while (id is null || post is null)
         {
-            Console.WriteLine("Enter the ID of the post you want to view:");
             try
             {
+                Console.WriteLine("Enter the ID of the post you want to view:");
                 id = int.Parse(Console.ReadLine());
                 post = await postRepository.GetSingleAsync((int)id);
             }

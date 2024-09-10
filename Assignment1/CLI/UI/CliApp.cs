@@ -16,8 +16,8 @@ public class CliApp(
         User? currentUser = null;
         while (currentUser == null)
         {
-            LoginRegisterView loginRegisterView = new LoginRegisterView(userRepository);
-            currentUser = await loginRegisterView.Register();
+            LoginView loginView = new LoginView(userRepository);
+            currentUser = await loginView.Register();
         }
 
         while (true)
@@ -45,7 +45,7 @@ public class CliApp(
                 }
                 case "4":
                 {
-                    CreateCommentView createCommentView = new CreateCommentView(currentUser, commentRepository);
+                    CreateCommentView createCommentView = new CreateCommentView(currentUser, commentRepository, postRepository);
                     createCommentView.Show();
                     break;
                 }

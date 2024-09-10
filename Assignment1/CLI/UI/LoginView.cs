@@ -3,17 +3,16 @@ using RepositoryContracts;
 
 namespace CLI.UI;
 
-public class LoginRegisterView(IUserRepository userRepository)
+public class LoginView(IUserRepository userRepository)
 {
     public async Task<User?> Register()
     {
-        Console.WriteLine("1) Register");
-        Console.WriteLine("2) Login");
-        Console.WriteLine("3) Exit");
+        Console.WriteLine("1) Login");
+        Console.WriteLine("2) Exit");
         string? cmd = Console.ReadLine();
         switch (cmd)
         {
-            case "1" or "2":
+            case "1":
             {
                 Console.WriteLine("Enter your username:");
                 string? username = Console.ReadLine();
@@ -25,7 +24,7 @@ public class LoginRegisterView(IUserRepository userRepository)
                 await userRepository.AddAsync(user);
                 return user;
             }
-            case "3":
+            case "2":
             {
                 Environment.Exit(0);
                 return null;
