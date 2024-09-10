@@ -2,7 +2,7 @@ using RepositoryContracts;
 
 namespace CLI.UI;
 
-public class ViewPostsView(IPostRepository postRepository):IMainView
+public class ViewPostsView(IPostRepository postRepository):IView
 {
     public void Show()
     {

@@ -3,7 +3,7 @@ using RepositoryContracts;
 
 namespace CLI.UI;
 
-public class CreateCommentView(User currentUser, ICommentRepository commentRepository):IMainView
+public class CreateCommentView(User currentUser, ICommentRepository commentRepository):IView
 {
     public void Show()
     {

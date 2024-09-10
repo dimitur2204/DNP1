@@ -3,7 +3,7 @@ using RepositoryContracts;
 
 namespace CLI.UI;
 
-public class ViewOnePostView(IPostRepository postRepository, ICommentRepository commentRepository) : IMainView
+public class ViewOnePostView(IPostRepository postRepository, ICommentRepository commentRepository) : IView
 {
     public async void Show()
     {

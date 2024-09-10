@@ -1,6 +1,6 @@
 namespace CLI.UI;
 
-public interface IMainView
+public interface IView
 {
     void Show();
 }
