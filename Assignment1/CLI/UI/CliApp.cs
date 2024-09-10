@@ -8,10 +8,6 @@ public class CliApp(
     IPostRepository postRepository,
     IUserRepository userRepository)
 {
-    private readonly ICommentRepository _commentRepository = commentRepository;
-    private readonly IPostRepository _postRepository = postRepository;
-    private readonly IUserRepository _userRepository = userRepository;
-
     public async void Run()
     {
         Console.Title = "Forum";
@@ -20,20 +16,44 @@ public class CliApp(
         User? currentUser = null;
         while (currentUser == null)
         {
-            LoginRegisterView loginRegisterView = new LoginRegisterView(_userRepository);
+            LoginRegisterView loginRegisterView = new LoginRegisterView(userRepository);
             currentUser = await loginRegisterView.Register();
         }
 
-        string choice = mainMenu.Choose();
-        switch (choice)
+        while (true)
         {
-            case "1":
+            string choice = mainMenu.Choose();
+            switch (choice)
             {
-                break;
-            }
-            case "2":
-            {
-                break;
+                case "1":
+                {
+                    ViewPostsView viewPostsView = new ViewPostsView(postRepository);
+                    viewPostsView.Show();
+                    break;
+                }
+                case "2":
+                {
+                    ViewOnePostView viewOnePostView = new ViewOnePostView(postRepository, commentRepository);
+                    viewOnePostView.Show();
+                    break;
+                }
+                case "3":
+                {
+                    CreatePostView createPostView = new CreatePostView(currentUser, postRepository);
+                    createPostView.Show();
+                    break;
+                }
+                case "4":
+                {
+                    CreateCommentView createCommentView = new CreateCommentView(currentUser, commentRepository);
+                    createCommentView.Show();
+                    break;
+                }
+                case "5":
+                {
+                    Environment.Exit(0);
+                    break;
+                }
             }
         }
     }

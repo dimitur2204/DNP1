@@ -2,9 +2,9 @@ using RepositoryContracts;
 
 namespace CLI.UI;
 
-public class ViewPostsView(IPostRepository postRepository)
+public class ViewPostsView(IPostRepository postRepository):IMainView
 {
-    public void ViewPosts()
+    public void Show()
     {
         Console.WriteLine("Posts:");
         foreach (var post in postRepository.GetMany())
@@ -15,5 +15,7 @@ public class ViewPostsView(IPostRepository postRepository)
                 Console.WriteLine("Title: " + post.Title);
             }
         }
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();
     }    
 }

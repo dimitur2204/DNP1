@@ -11,7 +11,6 @@ public class LoginRegisterView(IUserRepository userRepository)
         Console.WriteLine("2) Login");
         Console.WriteLine("3) Exit");
         string? cmd = Console.ReadLine();
-        User? currentUser = null;
         switch (cmd)
         {
             case "1" or "2":
@@ -23,9 +22,8 @@ public class LoginRegisterView(IUserRepository userRepository)
                 User user = new User();
                 user.Username = username;
                 user.Password = password;
-                currentUser = user;
                 await userRepository.AddAsync(user);
-                break;
+                return user;
             }
             case "3":
             {
@@ -34,6 +32,6 @@ public class LoginRegisterView(IUserRepository userRepository)
             }
         }
 
-        return currentUser;
+        return null;
     }
 }

@@ -4,6 +4,7 @@ public class MainMenuView
 {
     public string Choose()
     {
+        Console.Clear();
         Console.WriteLine("1) View posts");
         Console.WriteLine("2) View one post");
         Console.WriteLine("3) Create post");

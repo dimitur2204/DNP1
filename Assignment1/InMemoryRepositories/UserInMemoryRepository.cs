@@ -11,7 +11,7 @@ public class UserInMemoryRepository:IUserRepository
     public Task<User> AddAsync(User user)
     {
         if (user == null) throw new Exception("User can't be null");
-        int? newId = 1;
+        int newId = 1;
         if (_users.Count != 0) newId = _users.Max(u => u.Id) + 1;
         user.Id = newId;
         _users.Add(user);
@@ -45,7 +45,6 @@ public class UserInMemoryRepository:IUserRepository
 
     public IQueryable<User> GetMany()
     {
-        if (_users.Count == 0) throw new Exception("No users found");
         return _users.AsQueryable();     
     }
 }

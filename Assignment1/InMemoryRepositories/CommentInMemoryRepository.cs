@@ -44,7 +44,6 @@ public class CommentInMemoryRepository:ICommentRepository
 
     public IQueryable<Comment> GetMany()
     {
-        if (_comments.Count == 0) throw new Exception("No comments found");
         return _comments.AsQueryable();
     }
 }

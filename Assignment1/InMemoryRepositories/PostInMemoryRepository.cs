@@ -7,11 +7,12 @@ public class PostInMemoryRepository : IPostRepository
 {
     private readonly List<Post> _posts = new List<Post>();
 
-    public Task<Post> AddAsync(Post? post)
+    public Task<Post> AddAsync(Post post)
     {
         if (post == null) throw new Exception("Post can't be null");
-        if (_posts.Count == 0) return null;
-        post.Id = _posts.Max(p => p.Id) + 1;
+        int newId = 1;
+        if (_posts.Count != 0) newId = _posts.Max(c => c.Id) + 1;
+        post.Id = newId;
         _posts.Add(post);
         return Task.FromResult(post);
     }
@@ -44,7 +45,6 @@ public class PostInMemoryRepository : IPostRepository
 
     public IQueryable<Post?> GetMany()
     {
-        if (_posts.Count == 0) throw new Exception("No posts found"); 
         return _posts.AsQueryable();
     }
 }

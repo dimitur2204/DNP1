@@ -46,7 +46,7 @@
     ".NET Project.Assignment1.executor": "Run",
     ".NET Project.CLI.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "assignment2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725899824676</updated>
       <workItem from="1725899825723" duration="3577000" />
-      <workItem from="1725949343977" duration="4826000" />
+      <workItem from="1725949343977" duration="10746000" />
     </task>
     <servers />
   </component>
