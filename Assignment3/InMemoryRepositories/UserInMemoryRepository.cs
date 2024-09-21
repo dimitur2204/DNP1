@@ -36,7 +36,7 @@ public class UserInMemoryRepository:IUserRepository
         return Task.CompletedTask;
     }
 
-    public Task GetSingleAsync(int id)
+    public Task<User> GetSingleAsync(int id)
     {
         User? foundUser = _users.SingleOrDefault(u => u.Id == id);
         if (foundUser == null) throw new Exception("User does not exist");
