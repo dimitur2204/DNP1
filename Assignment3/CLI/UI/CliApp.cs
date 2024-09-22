@@ -22,7 +22,7 @@ public class CliApp(
 
         while (true)
         {
-            string choice = mainMenu.Choose();
+            string choice = await mainMenu.Choose();
             switch (choice)
             {
                 case "1":

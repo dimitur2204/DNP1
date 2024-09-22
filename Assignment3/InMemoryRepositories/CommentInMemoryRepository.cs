@@ -35,7 +35,7 @@ public class CommentInMemoryRepository:ICommentRepository
         return Task.CompletedTask;
     }
 
-    public Task GetSingleAsync(int id)
+    public Task<Comment> GetSingleAsync(int id)
     {
         Comment? foundComment = _comments.SingleOrDefault(c => c.Id == id);
         if (foundComment == null) throw new Exception("Comment does not exist");

@@ -10,12 +10,10 @@ public class PostsFileRepository : IPostRepository
     private readonly string _filePath = "posts.json";
     public PostsFileRepository()
     {
-        if (File.Exists(_filePath)) return;
-        File.Create(_filePath);
-        FileStream fs = File.Open(_filePath, FileMode.Append);
-        byte[] data = Encoding.UTF8.GetBytes("[]");
-        fs.WriteAsync(data);
-        fs.Close();
+        if (!File.Exists(_filePath))
+        {
+            File.WriteAllText(_filePath, "[]"); 
+        }
     }
     
     public async Task<Post> AddAsync(Post post)
@@ -25,6 +23,8 @@ public class PostsFileRepository : IPostRepository
         if(posts == null) throw new Exception("No posts parsed");
         post.Id = posts.Count + 1;
         posts.Add(post);
+        postsJson = JsonSerializer.Serialize(posts);
+        await File.WriteAllTextAsync(_filePath, postsJson);
         return post;
     }
 
@@ -39,6 +39,8 @@ public class PostsFileRepository : IPostRepository
         foundPost.Title = post.Title;
         foundPost.Body = post.Body;
         foundPost.WriterId = post.WriterId;
+        postsJson = JsonSerializer.Serialize(posts);
+        await File.WriteAllTextAsync(_filePath, postsJson);
     }
 
     public async Task DeleteAsync(Post post)
@@ -49,6 +51,8 @@ public class PostsFileRepository : IPostRepository
         Post? foundPost = posts.Find(p => p.Id == post.Id);
         if (foundPost == null) throw new Exception("Post not found");
         posts.Remove(foundPost);
+        postsJson = JsonSerializer.Serialize(posts);
+        await File.WriteAllTextAsync(_filePath, postsJson);
     }
 
     public async Task<Post> GetSingleAsync(int id)

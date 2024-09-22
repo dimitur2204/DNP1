@@ -2,9 +2,8 @@ namespace CLI.UI;
 
 public class MainMenuView
 {
-    public string Choose()
+    public async Task<string?> Choose()
     {
-        Console.Clear();
         Console.WriteLine("1) View posts");
         Console.WriteLine("2) View one post");
         Console.WriteLine("3) Create post");
@@ -17,6 +16,6 @@ public class MainMenuView
             return null;
         }
 
-        return cmd;
+        return await Task.FromResult(cmd);
     }
 }
