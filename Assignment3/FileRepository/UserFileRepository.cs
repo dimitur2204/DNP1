@@ -1,7 +1,7 @@
-﻿using System.Text;
-using System.Text.Json;
+﻿using System.Text.Json;
 using Entities;
 using RepositoryContracts;
+
 
 namespace FileRepository;
 
@@ -13,7 +13,7 @@ public class UserFileRepository : IUserRepository
     {
         if (!File.Exists(_filePath))
         {
-            File.WriteAllText(_filePath, "[]"); 
+            File.WriteAllText(_filePath, "[]");
         }
     }
 
@@ -21,7 +21,7 @@ public class UserFileRepository : IUserRepository
     {
         string usersAsJson = await File.ReadAllTextAsync(_filePath);
         List<User>? users = JsonSerializer.Deserialize<List<User>>(usersAsJson);
-        if(users == null) throw new Exception("No users parsed");
+        if (users == null) throw new Exception("No users parsed");
         user.Id = users.Count + 1;
         users.Add(user);
         usersAsJson = JsonSerializer.Serialize(users);
@@ -33,7 +33,7 @@ public class UserFileRepository : IUserRepository
     {
         string usersAsJson = await File.ReadAllTextAsync(_filePath);
         List<User>? users = JsonSerializer.Deserialize<List<User>>(usersAsJson);
-        if(users == null) throw new Exception("No users parsed");
+        if (users == null) throw new Exception("No users parsed");
         User? foundUser = users.Find(u => u.Id == user.Id);
         if (foundUser == null) throw new Exception("User not found");
         foundUser.Id = user.Id;
@@ -43,17 +43,16 @@ public class UserFileRepository : IUserRepository
         await File.WriteAllTextAsync(_filePath, usersAsJson);
     }
 
-    public Task DeleteAsync(User user)
+    public async Task DeleteAsync(User user)
     {
-        string usersAsJson = File.ReadAllText(_filePath);
+        string usersAsJson = await File.ReadAllTextAsync(_filePath);
         List<User>? users = JsonSerializer.Deserialize<List<User>>(usersAsJson);
-        if(users == null) throw new Exception("No users parsed");
+        if (users == null) throw new Exception("No users parsed");
         User? foundUser = users.Find(u => u.Id == user.Id);
         if (foundUser == null) throw new Exception("User not found");
         users.Remove(foundUser);
         usersAsJson = JsonSerializer.Serialize(users);
-        File.WriteAllText(_filePath, usersAsJson);
-        return Task.CompletedTask;
+        await File.WriteAllTextAsync(_filePath, usersAsJson);
     }
 
     public async Task<User> GetSingleAsync(int id)
@@ -69,7 +68,7 @@ public class UserFileRepository : IUserRepository
     {
         string usersAsJson = File.ReadAllText(_filePath);
         List<User>? users = JsonSerializer.Deserialize<List<User>>(usersAsJson);
-        if(users == null) throw new Exception("No users parsed");
+        if (users == null) throw new Exception("No users parsed");
         return users.AsQueryable();
     }
 }

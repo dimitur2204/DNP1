@@ -2,7 +2,7 @@ namespace CLI.UI;
 
 public class MainMenuView
 {
-    public async Task<string?> Choose()
+    public string? Choose()
     {
         Console.WriteLine("1) View posts");
         Console.WriteLine("2) View one post");
@@ -10,12 +10,6 @@ public class MainMenuView
         Console.WriteLine("4) Create comment");
         Console.WriteLine("5) Exit");
         string? cmd = Console.ReadLine();
-        if (cmd == "5")
-        {
-            Environment.Exit(0);
-            return null;
-        }
-
-        return await Task.FromResult(cmd);
+        return cmd;
     }
 }

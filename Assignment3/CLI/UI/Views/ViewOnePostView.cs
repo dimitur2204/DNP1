@@ -5,7 +5,7 @@ namespace CLI.UI;
 
 public class ViewOnePostView(IPostRepository postRepository, ICommentRepository commentRepository) : IView
 {
-    public async void Show()
+    public async Task Show()
     {
         int? id = null;
         Post? post = null;

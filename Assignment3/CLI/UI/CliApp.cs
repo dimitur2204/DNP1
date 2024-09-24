@@ -8,7 +8,7 @@ public class CliApp(
     IPostRepository postRepository,
     IUserRepository userRepository)
 {
-    public async void Run()
+    public async Task Run()
     {
         Console.Title = "Forum";
         Console.WriteLine("Welcome to the forum!");
@@ -22,37 +22,40 @@ public class CliApp(
 
         while (true)
         {
-            string choice = await mainMenu.Choose();
+            Console.WriteLine("User created, showing menu...");
+            string? choice = mainMenu.Choose();
+            Console.WriteLine("You chose: " + choice);
             switch (choice)
             {
                 case "1":
                 {
                     ViewPostsView viewPostsView = new ViewPostsView(postRepository);
-                    viewPostsView.Show();
+                    await viewPostsView.Show();
                     break;
                 }
                 case "2":
                 {
                     ViewOnePostView viewOnePostView = new ViewOnePostView(postRepository, commentRepository);
-                    viewOnePostView.Show();
+                    await viewOnePostView.Show();
                     break;
                 }
                 case "3":
                 {
                     CreatePostView createPostView = new CreatePostView(currentUser, postRepository);
-                    createPostView.Show();
+                    await createPostView.Show();
                     break;
                 }
                 case "4":
                 {
                     CreateCommentView createCommentView = new CreateCommentView(currentUser, commentRepository, postRepository);
-                    createCommentView.Show();
+                    await createCommentView.Show();
                     break;
                 }
                 case "5":
                 {
+                    Console.WriteLine("Goodbye! 👋");
                     Environment.Exit(0);
-                    break;
+                    return;
                 }
             }
         }

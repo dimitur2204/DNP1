@@ -5,7 +5,7 @@ namespace CLI.UI;
 
 public class CreatePostView(User currentUser, IPostRepository postRepository) : IView
 {
-    public async void Show()
+    public async Task Show()
     {
         Console.WriteLine("Enter post title:");
         string title = Console.ReadLine();

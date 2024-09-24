@@ -6,7 +6,7 @@ namespace CLI.UI;
 public class CreateCommentView(User currentUser, ICommentRepository commentRepository, IPostRepository postRepository)
     : IView
 {
-    public async void Show()
+    public async Task Show()
     {
         int? postId = null;
         Post? post = null;

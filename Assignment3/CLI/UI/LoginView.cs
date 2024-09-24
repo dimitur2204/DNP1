@@ -18,14 +18,18 @@ public class LoginView(IUserRepository userRepository)
                 string? username = Console.ReadLine();
                 Console.WriteLine("Enter your password:");
                 string? password = Console.ReadLine();
-                User user = new User();
-                user.Username = username;
-                user.Password = password;
-                await userRepository.AddAsync(user);
-                return user;
+                User user = new User
+                {
+                    Username = username,
+                    Password = password
+                };
+                User? newUser = await userRepository.AddAsync(user);
+                Console.WriteLine("User created successfully. ✅");
+                return newUser;
             }
             case "2":
             {
+                Console.WriteLine("Exit login");
                 Environment.Exit(0);
                 return null;
             }
