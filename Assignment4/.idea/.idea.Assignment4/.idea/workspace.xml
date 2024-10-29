@@ -13,6 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f251f5d2-7a3f-4495-a65f-329c4ec6afdb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Assignment3/.idea/.idea.Assignment3/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assignment4/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assignment4/.idea/encodings.xml" beforeDir="false" />
@@ -104,8 +105,8 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "assignment4",
-    "last_opened_file_path": "/Users/dimitar.nizamov/dev/via/DNP1/Assignment3",
+    "git-widget-placeholder": "assignment5",
+    "last_opened_file_path": "/Users/dimitar.nizamov/dev/via/DNP1/Assignment4",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -220,7 +221,12 @@
       <workItem from="1727159068497" duration="121000" />
       <workItem from="1727161678922" duration="840000" />
       <workItem from="1728140932314" duration="306000" />
-      <workItem from="1729278933290" duration="3163000" />
+      <workItem from="1729278933290" duration="3039000" />
+      <workItem from="1729558960442" duration="1936000" />
+      <workItem from="1730110075646" duration="121000" />
+      <workItem from="1730110254047" duration="23000" />
+      <workItem from="1730110859687" duration="33000" />
+      <workItem from="1730187407925" duration="112000" />
     </task>
     <servers />
   </component>
@@ -240,7 +246,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
