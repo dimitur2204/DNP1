@@ -10,19 +10,19 @@ namespace API.Controllers;
 public class UsersController(IUserRepository userRepository)
 {
     private readonly IUserRepository _userRepository = userRepository;
-    
+
     [HttpGet]
     public IEnumerable<User> GetUsers()
     {
         return _userRepository.GetMany();
     }
-    
+
     [HttpGet("{id}")]
     public async Task<User> GetUser(int id)
     {
         return await _userRepository.GetSingleAsync(id);
     }
-    
+
     [HttpPost]
     public async Task<User> AddUser(User user)
     {
@@ -30,7 +30,7 @@ public class UsersController(IUserRepository userRepository)
     }
     
     [HttpPut]
-    public async Task UpdateUser(User user)
+    public async Task UpdateUser([FromBody] User user)
     {
         await _userRepository.UpdateAsync(user);
     }

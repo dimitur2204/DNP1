@@ -1,0 +1,33 @@
+﻿@page "/counter"
+@using Client.Services
+@using Entities
+@inject HttpUserService userService
+@rendermode InteractiveServer
+
+<PageTitle>Users</PageTitle>
+
+<h1>Create user</h1>
+
+<label for="username">Username:</label>
+<input type="text" id="username" @bind="username"/>
+
+<label for="password">Password:</label>
+<input type="password" id="password" @bind="password"/>
+
+<button class="btn btn-primary" @onclick="CreateUser">Create user</button>
+
+@code {
+    private String username { get; set; }
+    private String password { get; set; }
+
+    private async Task CreateUser()
+    {
+        User user = new User
+        {
+            Username = username,
+            Password = password
+        };
+        await this.userService.AddUserAsync(user);
+    }
+
+}
